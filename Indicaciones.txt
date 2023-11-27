@@ -1,0 +1,19 @@
+/* EJERCICIOS A REALIZAR */
+
+1) Crear una pagina web que tenga mínimo 3 secciones, recuerden empezar con mobile first, pueden usar ya sea css,tailwind o sass (el tema lo escogen ustedes) pero esta debe contener lo siguiente: 
+   a) Deberá tener un botón que funcione para el modo oscuro y claro de la pagina. (listo)
+   b) Debera tener un carrusel de imagenes.(listo)
+   c) Debe tener un menu desplegable en version mobile (Usar js). (listo)
+   d) Debe tener al principio una ventana emergente que brinde alguna información y esta tenga un botón para cerrarla.(listo)
+
+2) Crea una expresión regular para validar una contraseña:(listo)
+  a) Que tenga mínimo 7 caracteres.
+  b) Al menos 1 mayúscula.
+  c) Al menos 1 numero.
+  d) Al menos 1 carácter especial.
+
+  clave: R1*hola
+
+3) Crea un personaje el cual se mueva por una pagina, este debe tener limites (No puede desbordarse), ademas deberá tener 2 obstáculos.
+
+FECHA DE ENTREGA: Jueves 23/11/2023.

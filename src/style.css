@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+    color: black;
+  }
+  
+  .header {
+    background-color: #0e6ce6;
+    height: 80px;
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    z-index: 2;
+  }
+
+  .nav-item{
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  .nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 40px;
+    text-transform: uppercase;
+    width: max-content;
+  }
+  
+  .nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 3px;
+  }
+  
+  .nav-menu-link:hover {
+    background-color: #0e6ce6;
+    height: 80px;
+    transition: 0.5s;
+  }
+  
+  /*---------------------------------- TOGGLE--------------------------------------- */
+  .nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      height: 80px;
+    }
+    .nav-menu {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      background-color: #0e6ce6;
+      height: 80px;
+      position: fixed;
+      top: 80px;
+      width: 100%;
+      padding: 20px 0;
+      height: 340px;
+      overflow-y: auto;
+      left: 100%;
+      transition: left 0.3s;
+    }
+
+    .nav-menu-item {
+      line-height: 70px;
+    }
+  
+    .nav-menu-link:hover{
+      background: none;
+      color: #83c5f7;
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+  
+    .nav-menu_visible {
+      left: 0;
+    }
+  }
+
+  /*---------------------------cambio de tema MODE:Dark--------------------------*/
+  
+  input[type ="checkbox"]{
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    appearance: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  input[type ="checkbox"]:checked {
+    background-color: black;
+  }
+
+  input[type ="checkbox"]::before{
+    content:  '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #0e6ce6;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.7s ease;
+    
+  }
+  input[type ="checkbox"]:checked::before {
+    transform: translateX(20px);
+
+  }
+  
+  .darkMode {
+    background-color: #252525;
+    color: white;
+  }
+
+/*----------------------------------- Modal ----------------------*/
+
+.modelBox{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:350px;
+  height: 320px;
+  background: #0e6ce6;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  z-index: 2;
+}
+
+.modelBox .btn-modal{
+  background-color: white; /* Green */
+  border: none;
+  border-radius: 15px;
+  color: #0e6ce6 ;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: relative;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-left: 50px;
+  margin-top: 5px;
+}
+.modelBox .btn-modal:hover{
+  background-color: #e6e20e ; /* Green */
+  color: black;
+}
+
+.close-icon{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/*---------------------------carrusel de imagenes------------------------------*/
+
+.slideshow-container {
+  max-width: 1200px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -20px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 15px;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 10px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
